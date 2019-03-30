@@ -1,4 +1,4 @@
-# tinkoff_cafe_web_wrapper
+# Web приложение для анализа данных Tinkoff Cafe
 
 
 
