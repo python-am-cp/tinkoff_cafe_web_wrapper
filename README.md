@@ -1,7 +1,9 @@
 # Web приложение для анализа данных Tinkoff Cafe
 
 
-[Cтек технологий](https://docs.google.com/spreadsheets/d/10_ih1ONghtAGQ29BRwEeNhrGonIFp6qVrk0CyaJH7SM/edit?usp=sharing)
+Single Page Application
 
-[План разработки](https://docs.google.com/spreadsheets/d/11WWGVOt248YdFJrY1i-7VG8CGzgnwogfRU5cHnnP5p4/edit?usp=sharing)
 
++ [Cтек технологий](https://docs.google.com/spreadsheets/d/10_ih1ONghtAGQ29BRwEeNhrGonIFp6qVrk0CyaJH7SM/edit?usp=sharing)
+
++ [Список дел и материалов для изучения](https://trello.com/b/sYs31Fnj/tinkoff-web) 
