@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 urlpatterns = [
     # When user request home page http://localhost:8000/my_hello_world, it will invoke the home function defined in views.py.
-    path('f', views.index_page, name='index'),
+    path('', views.index_page, name='index'),
 ]
