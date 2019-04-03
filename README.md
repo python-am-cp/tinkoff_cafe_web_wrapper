@@ -9,15 +9,13 @@ Tinkoff Web
    
    План разработки:
    ================
+   ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/Untitled%20Diagram.png)
    
    Обратная связь:
    ===============
-   [Артемий](https://vk.com/temimo)
-   [Тимур](https://vk.com/subelta)
-   [Александр](https://vk.com/papernyuk)
-   
-
-   ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/Untitled%20Diagram.png)
+   * [Артемий](https://vk.com/temimo)
+   * [Тимур](https://vk.com/subelta)
+   * [Александр](https://vk.com/papernyuk)
 
 + [Cтек технологий](https://docs.google.com/spreadsheets/d/10_ih1ONghtAGQ29BRwEeNhrGonIFp6qVrk0CyaJH7SM/edit?usp=sharing)
 
