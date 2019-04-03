@@ -4,11 +4,11 @@ Tinkoff Web
 валидации и выведении результатов. 
   
    Используемые технологии:
-   ------------------------
+   ========================
    ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/tech.png)
    
    План разработки:
-   ------------------------
+   ================
 
    ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/Untitled%20Diagram.png)
 
