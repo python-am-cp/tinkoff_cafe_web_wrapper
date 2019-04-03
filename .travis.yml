@@ -1,0 +1,11 @@
+language: python
+python: 3.6
+
+script:
+    - pytest
+env:
+  - DJANGO_VERSION=2.1.7
+
+deploy:
+  provider: pages
+  skip_cleanup: true
