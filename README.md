@@ -16,6 +16,9 @@ Tinkoff Web
    * [Артемий](https://vk.com/temimo)
    * [Тимур](https://vk.com/subelta)
    * [Александр](https://vk.com/papernyuk)
+   
+   Другие полезные ссылки:
+   =======================
 
 + [Cтек технологий](https://docs.google.com/spreadsheets/d/10_ih1ONghtAGQ29BRwEeNhrGonIFp6qVrk0CyaJH7SM/edit?usp=sharing)
 
