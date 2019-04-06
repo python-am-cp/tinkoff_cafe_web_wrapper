@@ -30,7 +30,5 @@ Tinkoff Web
 
 
 
-test message
 
-other message
 
