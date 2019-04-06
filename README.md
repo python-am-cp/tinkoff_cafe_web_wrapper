@@ -3,6 +3,10 @@ Tinkoff Web
 Мы разрабатываем веб-обертку в виде SPA для помощи команде Tinkoff Cafe в тестировании их гипотез, в т.ч. проведении автоматической кросс-
 валидации и выведении результатов. 
   
+   Распределение обязанностей:
+   ===========================
+   ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/charges.png)
+   
    Используемые технологии:
    ========================
    ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/tech.png)
