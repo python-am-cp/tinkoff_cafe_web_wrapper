@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinkoff Cafe Web Wrapper</title>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <span class="nav-brand-text">Tinkoff Cafe Web Wrapper</span>
+        </nav>
+        <!-- <h1 class="visually-hidden">Tinkoff Cafe Web Wrapper</h1> -->
+    </header>
+    <main>
+        <section class="about-us">
+            <h2 class="about-heading">Кто мы такие?</h1>
+            <p class="about-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum pellentesque volutpat. 
+            Praesent tincidunt sagittis lorem, et bibendum eros ornare in. Fusce tincidunt interdum mi, et
+            pharetra ligula. Ut lacus urna, rutrum ac hendrerit ac, efficitur id orci.</p>
+            <button class="get-started">Начать</button>
+        </section>
+        <form class="your-research">
+            <label for="inp-research-name">Название исследования:</label>
+            <input type="text" id="inp-research-name" name="research-name" required>
+
+            <label for="inp-research-desc">Описание исследования</label>
+            <textarea name="research-desc" id="inp-research-desc" cols="30" rows="3"></textarea>
+
+            <fieldset>
+                <legend>
+                    Приложите файлы с вашим кодом (<span class="code">.py</span>) и данными (<span class="code">.csv</span>)
+                </legend>
+                <label for="train-csv" class="label-files">
+                    Данные
+                </label>
+                <input type="file" id="train-csv" required>
+                
+                <label for="xtra-csv" class="label-files">
+                    Вспомогательные данные
+                </label>
+                <input type="file" id="xtra-csv" required>
+
+                <label for="train-py" class="label-files">
+                    Обучающий скрипт
+                </label>
+                <input type="file" id="train-py" required>
+
+                <label for="predict-py" class="label-files">
+                    Предсказатель
+                </label>
+                <input type="file" id="predict-py" required>
+            </fieldset>
+            <input type="submit" value="Отправить">
+        </form>
+    </main>
+    <footer>
+        <section class="contacts">
+            <h4>Обратная связь</h4>
+            <ul>
+                <li><a href="https://www.vk.com/subelta">Тимур</a></li>
+                <li><a href="https://vk.com/temimo">Артемий</a></li>
+                <li><a href="https://vk.com/papernyuk">Александр</a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>
