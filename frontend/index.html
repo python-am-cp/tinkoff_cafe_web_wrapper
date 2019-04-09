@@ -18,27 +18,24 @@
             <div class="about-us-container">
                 <h2 class="about-heading">Кто мы?</h1>
                 <p class="about-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum pellentesque volutpat. 
-                    Praesent tincidunt sagittis lorem, et bibendum eros ornare in. Fusce tincidunt interdum mi, et
-                    pharetra ligula. Ut lacus urna, rutrum ac hendrerit ac, efficitur id orci. rutrum ac hendrerit ac, efficitur id orci.
+                    Мы - команда, разрабатывающая платформу, призванную помочь аналитикам в проверке 
+                    их гипотез и автоматическом тестировании их кода. На данный момент мы частично 
+                    автоматизируем алгоритм  кросс-валидации для команды Tinkoff Cafe, пытающейся предсказать 
+                    заказы людей в одноименно кафе
                 </p>
                 <button class="get-started">Начать</button>
             </div>
         </section>
         <section class="form-wrapper">
             <form class="form-research">
-                <span class="edit">ed</span> 
-                <h2 class="research-head">Мое исследование</h2> 
-                
+                <label for="inp-research-name" class="visually-hidden">Введите название исследования</label>
+                <input type="text" id="inp-research-name" value="Мое исследование" name="research-name" maxlength="60" required>
+
+                <label for="inp-research-desc" class="visually-hidden">Введите описание исследования</label>
                 <div class="res-desc-wrapper">
-                    <span class="edit">ed</span> 
-                    <p class="research-desc">
-                            Описание моего исследования et bibendum eros ornare in. Fusce tincidunt interdum mi, et
-                            pharetra ligula. Ut lacus urna, rutrum aet bibendum eros ornare in. Fusce tincidunt interdum mi, et
-                            pharetra ligula. Ut lacus urna, rutrum aet bibendum eros ornare in. Fusce tincidunt interdum mi, et
-                            pharetra ligula.
-                    </p>
-                    <span class="simbols-limit">Постарайтесь уложиться в 150 символов</span>   
+                    <textarea name="research-desc" id="inp-research-desc" maxlength="200">Описание моего исследования...
+                    </textarea>
+                    <span class="simbols-limit">Постарайтесь уложиться в 200 символов</span>   
                 </div>
             
                 <fieldset>
@@ -48,30 +45,30 @@
                     <div class="files-wrapper">
                         <div class="file">
                             <label for="train-csv" class="label-file">
-                                    Данные
+                                Данные
                             </label>
-                            <input type="file" id="train-csv" required>
+                            <input type="file" id="train-csv" name="Train-csv" required>
                         </div>
     
                         <div class="file">
                             <label for="xtra-csv" class="label-file">
                                 Вспомогательные данные
                             </label>
-                            <input type="file" id="xtra-csv" required>
+                            <input type="file" id="xtra-csv" name="Xtra-csv" required>
                         </div>
     
                         <div class="file">
                             <label for="train-py" class="label-file">
                                 Обучающий скрипт
                             </label>
-                            <input type="file" id="train-py" required>
+                            <input type="file" id="train-py" name="Train-py" required>
                         </div>
     
                         <div class="file">
                             <label for="predict-py" class="label-file">
                                 Скрипт-предсказатель
                             </label>
-                            <input type="file" id="predict-py" required>
+                            <input type="file" id="predict-py" name="Predict-py" required>
                         </div>
                     </div>
                 </fieldset>
@@ -79,14 +76,14 @@
                 <div class="user-data">
                     <div class="inp-contacts">
                         <label for="inp-name" class="label-contact" required>Введите имя</label>
-                        <input type="text" id="inp-name">
+                        <input type="text" id="inp-name" name="user-name">
                         <label for="inp-email" class="label-contact" required>Введите email</label>
-                        <input type="email" id="inp-email" required>
+                        <input type="email" id="inp-email" name="user-email" required>
                     </div>
                     <div class="submit">
                         <div>
                             <p class="we-contact-you">Мы пришлем результат вам на почту, как только закончим вычисления</p>
-                            <input type="submit" value="Отправить">
+                            <input type="submit" value="Отправить" href="#">
                         </div>
                     </div>
                 </div>
@@ -96,11 +93,11 @@
     </main>
     <footer>
         <section class="contacts">
-            <h4>Обратная связь</h4>
+            <h3 class="contact-us">Обратная связь</h4>
             <ul class="list-contacts">
-                <li><a href="https://vk.com/subelta">Тимур</a></li>
-                <li><a href="https://vk.com/temimo">Артемий</a></li>
-                <li><a href="https://vk.com/papernyuk">Александр</a></li>
+                <li><a class="team-member" href="https://vk.com/subelta">Тимур</a></li>
+                <li><a class="team-member" href="https://vk.com/temimo">Артемий</a></li>
+                <li><a class="team-member" href="https://vk.com/papernyuk">Александр</a></li>
             </ul>
         </section>
     </footer>

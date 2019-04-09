@@ -17,6 +17,7 @@ body {
 .nav-brand-text {
     margin: 0 35px;
     font-size: 1.5rem;
+    /* text-shadow: 1px 1px 2px black; */
 }
 
 .about-us {
@@ -67,38 +68,52 @@ body {
 
 .form-wrapper {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 800px;
 }
 
 .form-research {
+    margin: 70px 0;
     width: 60%;
     background-color: white;
     padding: 47px;
     border-radius: 15px;
     border: 2px solid #dd3e3e;
-    /* display: flex; */
 }
 
-input {
+.visually-hidden {
+    display: none;
+}
+
+input:not([type=file]):not([type=submit]),
+textarea {
     outline: none;
+    font-family: 'Roboto Slab', serif;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 2px solid lightgray; 
+    font-size: 0.9rem;
 }
 
-.research-head {
-    display: inline-block; 
-    margin: 0 0 0 20px;
+
+
+#inp-research-name {
+    height: 35px;
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+#inp-research-desc {
+    resize: none;
+    margin-right: 20px;
+    width: 100%;
+    height: 60px;
 }
 
 .res-desc-wrapper {
     margin: 15px 0;
     display: flex;
     justify-content: space-between;
-}
-
-.research-desc {
-    margin: 0;
-    width: 82%;
 }
 
 .simbols-limit {
@@ -117,6 +132,7 @@ fieldset {
 .files-wrapper {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .file {
@@ -132,6 +148,13 @@ fieldset {
 .user-data {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#inp-name,
+#inp-email {
+    width: 300px;
+    height: 30px;
 }
 
 .label-contact {
@@ -139,16 +162,8 @@ fieldset {
     margin: 10px 0 5px;
 }
 
-#inp-name,
-#inp-email {
-    width: 300px;
-    height: 25px;
-    border-radius: 5px;
-    border: 2px solid lightgray; 
-}
-
 .we-contact-you {
-    width: 400px;
+    max-width: 400px;
     height: 50px;
 }
 
@@ -156,7 +171,6 @@ fieldset {
     display: flex;
     justify-content: end;
     align-items: end;
-
 }
 
 input[type=submit] {
@@ -168,19 +182,35 @@ input[type=submit] {
     width: 110px;
     height: 40px;
     font-family: 'Roboto Slab', serif;
-    /* font-size: 1rem; */
     transition: all 0.2s;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: #dd3e3e;
+    transition: all 0.2s;
+    border: 1px solid #dd3e3e;
 }
 
 footer {
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+    background-color: #dd3e3e;
+    color: white;
 }
 
 .contacts {
     width: 300px;
     text-align: center;
+}
+
+.contact-us {
+    text-shadow: 1px 1px 2px black;
+}
+
+.team-member {
+    color: white;
 }
 
 .list-contacts {
