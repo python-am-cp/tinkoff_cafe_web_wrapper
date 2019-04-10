@@ -11,7 +11,7 @@
         <nav class="main-nav">
             <span class="nav-brand-text">Tinkoff Cafe Web Wrapper</span>
         </nav>
-        <!-- <h1 class="visually-hidden">Tinkoff Cafe Web Wrapper</h1> -->
+        <h1 class="visually-hidden">Tinkoff Cafe Web Wrapper</h1>
     </header>
     <main>
         <section class="about-us">
@@ -45,28 +45,40 @@
                     <div class="files-wrapper">
                         <div class="file">
                             <label for="train-csv" class="label-file">
-                                Данные
+                                <!-- Данные -->
+                                train.csv
                             </label>
                             <input type="file" id="train-csv" name="Train-csv" required>
                         </div>
     
                         <div class="file">
-                            <label for="xtra-csv" class="label-file">
-                                Вспомогательные данные
+                            <label for="menu-train-csv" class="label-file">
+                                <!-- Вспомогательные данные -->
+                                menu-train.csv
                             </label>
-                            <input type="file" id="xtra-csv" name="Xtra-csv" required>
+                            <input type="file" id="menu-train-csv" name="menu-train-csv" required>
+                        </div>
+
+                        <div class="file">
+                            <label for="menu-tagged-csv" class="label-file">
+                                <!-- Вспомогательные данные -->
+                                menu-tagged.csv
+                            </label>
+                            <input type="file" id="menu-tagged-csv" name="menu-tagged-csv" required>
                         </div>
     
                         <div class="file">
                             <label for="train-py" class="label-file">
-                                Обучающий скрипт
+                                <!-- Обучающий скрипт -->
+                                train.py
                             </label>
                             <input type="file" id="train-py" name="Train-py" required>
                         </div>
     
                         <div class="file">
                             <label for="predict-py" class="label-file">
-                                Скрипт-предсказатель
+                                <!-- Скрипт-предсказатель -->
+                                predict.py
                             </label>
                             <input type="file" id="predict-py" name="Predict-py" required>
                         </div>
