@@ -27,17 +27,27 @@ Tinkoff Cafe Web Wrapper
   
    Распределение обязанностей:
    ===========================
-   ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/charges.png)
+   **[Тимур](https://vk.com/subelta):**
+   
+   + Frontend 
+   + Связь с бекендом
+   + Деплой и работа сервера
+   
+   **[Артемий](https://vk.com/temimo):**
+   
+   + организация хранения пользовательских данных
+   + запуск вычислений в нужное время и нужной последовательности 
+   + пересылка данных на email пользователей
+   
+   **[Александр](https://vk.com/papernyuk):**
+   
+   + Основная логика взаимодействия пользовательских файлов, вычисления, получение результата (см Схема)
+   
    
    Используемые технологии:
    ========================
    ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/tech.png)
-   
-   Обратная связь:
-   ===============
-   * [Артемий](https://vk.com/temimo)
-   * [Тимур](https://vk.com/subelta)
-   * [Александр](https://vk.com/papernyuk)
+
    
    Другие полезные ссылки:
    =======================
