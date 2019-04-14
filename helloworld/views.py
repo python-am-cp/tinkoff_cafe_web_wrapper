@@ -4,7 +4,7 @@ import threading
 from django.core.mail import EmailMessage
 from. import validation
 
-validation.valid('helloworld/input_user/')
+# validation.valid('helloworld/input_user/')
 # def printit():
 #     threading.Timer(10.0, printit).start()
 #     if not os.listdir('helloworld/input_user/'):
@@ -14,9 +14,9 @@ validation.valid('helloworld/input_user/')
 #
 # printit()
 
-em = EmailMessage(subject='Test', body='Test', to=['tinkoffweb228@gmail.com'])
-# em.attach_file(r'C:\Users\Артемий\Documents\СПбГУ\hello.txt')
-em.send()
+# em = EmailMessage(subject='Test', body='Test', to=['tinkoffweb228@gmail.com'])
+# # em.attach_file(r'C:\Users\Артемий\Documents\СПбГУ\hello.txt')
+# em.send()
 
 
 def index_page(request):

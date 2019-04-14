@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-import threading
-from django.core.mail import EmailMessage
+
 
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tinkoff_web.settings')
