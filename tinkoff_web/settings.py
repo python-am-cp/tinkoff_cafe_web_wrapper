@@ -126,5 +126,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+_PATH = os.path.abspath(os.path.dirname(__file__))
 
 STATIC_URL = '/static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'tinkoffweb228@gmail.com'
+EMAIL_HOST_PASSWORD = 'QWERTYYTREWQ'
