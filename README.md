@@ -4,7 +4,7 @@ Tinkoff Cafe Web Wrapper
 
 Мы разрабатываем веб-обертку в виде SPA для помощи команде Tinkoff Cafe в тестировании их гипотез, в т.ч. проведении автоматической кросс-валидации и выведении результатов. 
 
-[Сверстанная страница](https://python-am-cp.github.io/tinkoff_cafe_web_wrapper/frontend/index.html)
+[Фронтенд](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper-front)
 
 
    Общая схема работы
