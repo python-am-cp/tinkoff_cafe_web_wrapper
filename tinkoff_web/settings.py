@@ -25,7 +25,7 @@ SECRET_KEY = '0u0y)u3&1__6oiu695pj0d@^e*f-m&73h4s*%79hs)g$6vk*3b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['36f57679.ngrok.io', '127.0.0.1']
 
 
 # Application definition
@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'helloworld'
+    'helloworld',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -49,6 +52,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+CORS_ORIGIN_WHITELIST = (
+    'python-am-cp.github.io/tinkoff_cafe_web_wrapper-front'
+)
 
 ROOT_URLCONF = 'tinkoff_web.urls'
 
