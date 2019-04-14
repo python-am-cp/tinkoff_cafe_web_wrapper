@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 
 CORS_ORIGIN_WHITELIST = (
-    'subelta.github.io/tinkoff_cafe_web_wrapper-front/index.html'
+    'python-am-cp.github.io/tinkoff_cafe_web_wrapper-front'
 )
 
 ROOT_URLCONF = 'tinkoff_web.urls'
