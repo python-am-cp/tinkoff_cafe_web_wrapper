@@ -4,7 +4,25 @@ import threading
 from django.core.mail import EmailMessage
 from. import validation
 
-validation.valid('helloworld/input_user/')
+from django.http import HttpResponse
+
+def directComputationReq(request):
+    # validation.valid('helloworld/input_user/')
+    f = open("X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/"
+             "input_user/result.txt", "r")
+    while True:
+        line1 = f.readline()
+        line2 = f.readline()
+        line3 = f.readline()
+        if not line3: break
+    f.close()
+    em = EmailMessage(subject='Result', body='Ваш результат', to=['atomicmaize@gmail.com'])
+    em.attach_file(r"X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/"
+             "input_user/result.txt")
+    em.send()
+    return HttpResponse('\n'.join([line1, line2,]))
+
+# validation.valid('helloworld/input_user/')
 # def printit():
 #     threading.Timer(10.0, printit).start()
 #     if not os.listdir('helloworld/input_user/'):
