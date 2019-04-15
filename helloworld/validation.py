@@ -1,12 +1,7 @@
-from django.apps import AppConfig
 import pandas as pd
 import os
 import sys
-from pathlib import Path
-import numpy as np
-import importlib
 import subprocess
-
 
 def valid(working_dir: str):
     train_csv = 'train1.csv'
@@ -18,6 +13,7 @@ def valid(working_dir: str):
     kolvo_rows = all_data.shape[0]
     batch_size = int(kolvo_rows / NUM_TESTS)
     F1 = []
+    f = open('result.txt', 'w')
     print(all_data.shape)
     for i in range(NUM_TESTS):
         start = i * batch_size
@@ -30,6 +26,7 @@ def valid(working_dir: str):
         subprocess.check_call(f'python predict.py', shell=True, stdout=sys.stdout)
 
         test_answers = all_data.iloc[start:start + batch_size, :]
+        # test_answers.to_csv('answers.csv', index=False)
         prediction = pd.read_csv('prediction.csv', header=0, sep=',')
         kolvo_matches = 0
         kolvo_pred = 0
@@ -44,6 +41,16 @@ def valid(working_dir: str):
             answers[chknum] = pred
             kolvo_pred += len(pred)
 
+        answ = {}
+        for row in test_answers.values:
+            chknum, person_id, month, day, good, good_id = row
+            if chknum in answ:
+                answ[chknum].append(good_id)
+            else:
+                answ[chknum] = [good_id]
+
+        pd.DataFrame([[key, " ".join([str(j) for j in sorted(val)])] for key, val in answ.items()], columns=['chknum', 'answ']).to_csv('answers.csv', index=False)
+
         for row in test_answers.values:
             chknum, person_id, month, day, good, good_id = row
             if good_id in answers[chknum]:
@@ -53,6 +60,6 @@ def valid(working_dir: str):
         p = kolvo_matches / kolvo_pred
         r = kolvo_matches / test_answers.shape[0]
         F1.append(2 * p * r / (p + r))
-    f = open('result.txt', 'w')
+    print(F1[-1], file=f)
     print(sum(F1) / NUM_TESTS, file=f)
     f.close()
