@@ -18,6 +18,7 @@ def valid(working_dir: str):
     kolvo_rows = all_data.shape[0]
     batch_size = int(kolvo_rows / NUM_TESTS)
     F1 = []
+    print(all_data.shape)
     for i in range(NUM_TESTS):
         start = i * batch_size
         test_data = all_data.iloc[start:start + batch_size, 0:4]
@@ -55,4 +56,3 @@ def valid(working_dir: str):
     f = open('result.txt', 'w')
     print(sum(F1) / NUM_TESTS, file=f)
     f.close()
-

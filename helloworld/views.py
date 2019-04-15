@@ -4,7 +4,7 @@ import threading
 from django.core.mail import EmailMessage
 from. import validation
 
-# validation.valid('helloworld/input_user/')
+validation.valid('helloworld/input_user/')
 # def printit():
 #     threading.Timer(10.0, printit).start()
 #     if not os.listdir('helloworld/input_user/'):
