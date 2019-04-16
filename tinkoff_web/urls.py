@@ -21,5 +21,5 @@ urlpatterns = [
     # when client request http://127.0.0.1:8000/index/, the project will find the mapped process method in my_hello_world app's urls.py file.
     path('', include('helloworld.urls')),
     path('request_page/', include('helloworld.urls')),
-    # path('python-am-cp.github.io/tinkoff_cafe_web_wrapper-front', include('helloworld.urls'))
+    path('form_send/', include('helloworld.urls'))
 ]

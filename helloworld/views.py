@@ -3,8 +3,13 @@ import os
 import threading
 from django.core.mail import EmailMessage
 from. import validation
-
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+
+
+INPUT_DIR = "X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/" \
+            "input_user/"
+
 
 def directComputationReq(request):
     # validation.valid('helloworld/input_user/')
@@ -20,7 +25,24 @@ def directComputationReq(request):
     em.attach_file(r"X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/"
              "input_user/result.txt")
     em.send()
-    return HttpResponse('\n'.join([line1, line2,]))
+    return HttpResponse('\n'.join([line1, line2]))
+
+
+def handleUploaded(reqFiles):
+    for key, value in reqFiles.items():
+        name = reqFiles[key].name
+        with open(INPUT_DIR + name, 'wb+') as destination:
+            for chunk in reqFiles[key].chunks():
+                destination.write(chunk)
+
+
+@csrf_exempt
+def uploadFiles(request):
+    if request.method == 'POST':
+        handleUploaded(request.FILES)
+        return HttpResponse("Ваши файлы сохранены")
+    return HttpResponse("Метод должен быть POST")
+
 
 # validation.valid('helloworld/input_user/')
 # def printit():
@@ -31,10 +53,6 @@ def directComputationReq(request):
 #         print('FUCK!')
 #
 # printit()
-
-# em = EmailMessage(subject='Test', body='Test', to=['tinkoffweb228@gmail.com'])
-# # em.attach_file(r'C:\Users\Артемий\Documents\СПбГУ\hello.txt')
-# em.send()
 
 
 def index_page(request):
