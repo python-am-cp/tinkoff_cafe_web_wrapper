@@ -5,16 +5,18 @@ from django.core.mail import EmailMessage
 from. import validation
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+import time
+import shutil
 
 
 INPUT_DIR = "X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/" \
             "input_user/"
+doLogic = False
 
 
 def directComputationReq(request):
     # validation.valid('helloworld/input_user/')
-    f = open("X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/"
-             "input_user/result.txt", "r")
+    f = open(INPUT_DIR + "result.txt", "r")
     while True:
         line1 = f.readline()
         line2 = f.readline()
@@ -23,23 +25,50 @@ def directComputationReq(request):
     f.close()
     em = EmailMessage(subject='Result', body='Ваш результат', to=['atomicmaize@gmail.com'])
     em.attach_file(r"X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/"
-             "input_user/result.txt")
+             "input_user/user1/result.txt")
     em.send()
     return HttpResponse('\n'.join([line1, line2]))
+
+
+def doMainLogic():
+    global doLogic
+    while True:
+        if doLogic:
+            validation.valid(INPUT_DIR + 'user1/')
+            f = open(INPUT_DIR + 'user1/' + "result.txt", "r")
+            while True:
+                line1 = f.readline()
+                line2 = f.readline()
+                line3 = f.readline()
+                if not line3: break
+            f.close()
+            em = EmailMessage(subject='Result', body='Ваш результат', to=['atomicmaize@gmail.com'])
+            em.attach_file(r"X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/"
+                     "input_user/user1/result.txt")
+            em.send()
+            shutil.rmtree(INPUT_DIR + 'user1/', ignore_errors=True)
+            doLogic = False
+        time.sleep(5)
+
 
 
 def handleUploaded(reqFiles):
     for key, value in reqFiles.items():
         name = reqFiles[key].name
-        with open(INPUT_DIR + name, 'wb+') as destination:
+        if not os.path.exists(INPUT_DIR + 'user1/'):
+            os.makedirs(INPUT_DIR + 'user1/')
+        with open(INPUT_DIR + 'user1/' + name, 'wb+') as destination:
             for chunk in reqFiles[key].chunks():
                 destination.write(chunk)
 
 
+
 @csrf_exempt
 def uploadFiles(request):
+    global doLogic
     if request.method == 'POST':
         handleUploaded(request.FILES)
+        doLogic = True
         return HttpResponse("Ваши файлы сохранены")
     return HttpResponse("Метод должен быть POST")
 
