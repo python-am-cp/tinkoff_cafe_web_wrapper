@@ -7,8 +7,8 @@ from . import views
 
 
 urlpatterns = [
-    path('request_page/', views.directComputationReq, name="request_pg"),
     path('', views.index_page, name='index'),
+    path('form_send/', views.receive_form, name="form_snd")
 ]
 
 # if settings.DEBUG:
