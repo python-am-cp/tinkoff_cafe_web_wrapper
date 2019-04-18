@@ -1,8 +1,8 @@
 
-class User:
-    def __init__(self, name='', email='', resName='', resDesc='', path=''):
+class Research:
+    def __init__(self, name='', email='', res_name='', res_desc='', path=''):
         self.name = name
         self.email = email
-        self.resName = resName
-        self.resDesc = resDesc
+        self.resName = res_name
+        self.resDesc = res_desc
         self.path = path

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-from helloworld.views import doMainLogic
+from helloworld.views import handle_queue
 import threading
 
 if __name__ == '__main__':
@@ -14,7 +14,7 @@ if __name__ == '__main__':
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-    logicThread = threading.Thread(target=doMainLogic, args=[])
+    logicThread = threading.Thread(target=handle_queue, args=[])
     logicThread.setDaemon(False)
     logicThread.start()
     execute_from_command_line(sys.argv)
