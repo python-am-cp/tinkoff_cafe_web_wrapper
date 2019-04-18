@@ -15,24 +15,8 @@ INPUT_DIR = "X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/" \
             "input_user/"
 
 
-def directComputationReq(request):
-    # validation.valid('helloworld/input_user/')
-    f = open(INPUT_DIR + "result.txt", "r")
-    while True:
-        line1 = f.readline()
-        line2 = f.readline()
-        line3 = f.readline()
-        if not line3: break
-    f.close()
-    em = EmailMessage(subject='Result', body='Ваш результат', to=['atomicmaize@gmail.com'])
-    em.attach_file(r"X:/Docs/Pycharm Projects/tinkoff_cafe_web_wrapper/helloworld/"
-                   "input_user/user1/result.txt")
-    em.send()
-    return HttpResponse('\n'.join([line1, line2]))
-
-
 def do_main_logic(curr_res):
-        # validation.valid(curr_user.path)
+        validation.valid(curr_res.path)
         with open(curr_res.path + 'result.txt', 'w+') as dest:
                 dest.write('134423 \n 435423')
         f = open(curr_res.path + "result.txt", "r")
