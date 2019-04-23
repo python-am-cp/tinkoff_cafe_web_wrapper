@@ -8,8 +8,10 @@ import random
 from helloworld.classes import Research
 from django.core.mail import EmailMessage
 import queue
-from. import cross_validation
+import threading
 from tinkoff_web import settings
+from. import cross_validation
+
 
 taskQueue = queue.Queue(maxsize=6)
 
@@ -84,3 +86,8 @@ def calculate_send_clear(curr_res):
 
 def index_page(request):
     return render(request, 'index.html')
+
+
+logicThread = threading.Thread(target=handle_queue, args=[])
+logicThread.setDaemon(False)
+logicThread.start()
