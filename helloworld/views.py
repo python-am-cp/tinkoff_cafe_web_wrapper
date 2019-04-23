@@ -9,7 +9,7 @@ from helloworld.classes import Research
 from django.core.mail import EmailMessage
 import queue
 from. import cross_validation
-from. import config
+from tinkoff_web import settings
 
 taskQueue = queue.Queue(maxsize=6)
 
@@ -43,7 +43,7 @@ def handle_user_data(data):
     res_name = data.get('research-name')
     res_desc = data.get('research-desc')
     user_folder = email + str(random.randint(10000, 99999)) + '/'
-    user_path = config.INPUT_DIR + user_folder
+    user_path = settings.INPUT_DIR + user_folder
 
     this_research = Research(user_name, email, res_name, res_desc, user_path)
     return this_research
@@ -60,26 +60,26 @@ def handle_user_files(req_files, current_res):
 
 
 def calculate_send_clear(curr_res):
-        cross_validation.validate(curr_res.path)
-        # with open(curr_res.path + 'result.txt', 'w+') as dest:
-        #         dest.write('134423 \n 435423')
-        f = open(curr_res.path + "result.txt", "r")
-        while True:
-            line1 = f.readline()
-            line2 = f.readline()
-            line3 = f.readline()
-            if not line3:
-                break
-        f.close()
-        subj = 'Результат' + ' ' + curr_res.resName
-        mail_content = 'Здравствуйте,' + ' ' + curr_res.name + ', ' + 'результат ' \
-                       'расчетов по метрике составил: ' + '\n\n' + str(line1) + \
-                       str(line2) + '\n\n' + 'Описание вашего исследования:' + ' ' \
-                       + curr_res.resDesc
+    cross_validation.validate(curr_res.path)
+    # with open(curr_res.path + 'result.txt', 'w+') as dest:
+    #         dest.write('134423 \n 435423')
+    f = open(curr_res.path + "result.txt", "r")
+    while True:
+        line1 = f.readline()
+        line2 = f.readline()
+        line3 = f.readline()
+        if not line3:
+            break
+    f.close()
+    subj = 'Результат' + ' ' + curr_res.resName
+    mail_content = 'Здравствуйте,' + ' ' + curr_res.name + ', ' + 'результат ' \
+                   'расчетов по метрике составил: ' + '\n\n' + str(line1) + \
+                   str(line2) + '\n\n' + 'Описание вашего исследования:' + ' ' \
+                   + curr_res.resDesc
 
-        msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
-        msg.send()
-        shutil.rmtree(curr_res.path, ignore_errors=True)
+    msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
+    msg.send()
+    shutil.rmtree(curr_res.path, ignore_errors=True)
 
 
 def index_page(request):
