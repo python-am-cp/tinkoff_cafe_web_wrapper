@@ -87,7 +87,7 @@ def calculate_send_clear(curr_res):
 def index_page(request):
     return render(request, 'index.html')
 
-
-logicThread = threading.Thread(target=handle_queue, args=[])
-logicThread.setDaemon(False)
-logicThread.start()
+#
+# logicThread = threading.Thread(target=handle_queue, args=[])
+# logicThread.setDaemon(False)
+# logicThread.start()
