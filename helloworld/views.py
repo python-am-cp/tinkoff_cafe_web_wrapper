@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 import time
 import shutil
 import random
-from helloworld.classes import Research
+from classes import Research
 from django.core.mail import EmailMessage
 import queue
 import threading
