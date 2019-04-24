@@ -9,4 +9,4 @@ install:
   - pip install -r requirements.txt
 script:
   - python manage.py test
-  - helloworld/task_queue.py
+  - python helloworld/task_queue.py run
