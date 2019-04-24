@@ -62,14 +62,7 @@ def handle_user_files(req_files, current_res):
         with open(current_res.path + file_name, 'wb+') as destination:
             for chunk in req_files[key].chunks():
                 destination.write(chunk)
-    f = open(current_res.path + "result.txt", "r")
-    while True:
-        line1 = f.readline()
-        line2 = f.readline()
-        line3 = f.readline()
-        if not line3:
-            break
-    print(line2)
+    print("Разобрались с файлами")
 
 
 
