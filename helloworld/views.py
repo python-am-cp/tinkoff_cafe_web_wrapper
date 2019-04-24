@@ -5,12 +5,11 @@ from django.views.decorators.csrf import csrf_exempt
 import time
 import shutil
 import random
-from classes import Research
+from helloworld.classes import Research
 from django.core.mail import EmailMessage
 import queue
 import threading
 from tinkoff_web import settings
-from. import cross_validation
 
 
 taskQueue = queue.Queue(maxsize=6)

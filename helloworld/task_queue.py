@@ -3,9 +3,9 @@ import time
 import shutil
 from django.core.mail import EmailMessage
 
-from views import taskQueue
-from daemon import Daemon
-import cross_validation
+from helloworld.views import taskQueue
+from helloworld.daemon import Daemon
+from helloworld import cross_validation
 
 
 class TaskDaemon(Daemon):
