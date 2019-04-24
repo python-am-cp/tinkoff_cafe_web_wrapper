@@ -47,6 +47,7 @@ def handle_user_data(data):
     user_path = settings.INPUT_DIR + user_folder
 
     this_research = Research(user_name, email, res_name, res_desc, user_path)
+    print("Разобрались с данными")
     return this_research
 
 
@@ -58,6 +59,8 @@ def handle_user_files(req_files, current_res):
         with open(current_res.path + file_name, 'wb+') as destination:
             for chunk in req_files[key].chunks():
                 destination.write(chunk)
+    print("Разобрались с файлами")
+
 
 
 # def calculate_send_clear(curr_res):
