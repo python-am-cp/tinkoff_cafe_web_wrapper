@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage
 
 from views import taskQueue
 from daemon import Daemon
-from. import cross_validation
+import cross_validation
 
 
 class TaskDaemon(Daemon):
