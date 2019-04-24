@@ -1,1 +1,1 @@
-web: gunicorn tinkoff_cafe_web_wrapper.wsgi --log-file -
+web: gunicorn tinkoff_web.wsgi --log-file -
