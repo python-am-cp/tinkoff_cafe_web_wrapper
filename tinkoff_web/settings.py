@@ -131,7 +131,7 @@ _PATH = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PROJECT_ROOT = os.path.join(os.path.abspath("manage.py")[:-9])
-INPUT_DIR = os.path.join(PROJECT_ROOT, "helloworld/input_user/")
+INPUT_DIR = os.path.join(PROJECT_ROOT, "tmp/")
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/staticfiles/'
