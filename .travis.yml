@@ -1,14 +1,21 @@
 dist: xenial
 language: python
 python:
-  - "3.6"
-  - "3.7"
+- '3.6'
+- '3.7'
+deploy:
+  provider: heroku
+  api_key:
+    secure: a9N3NXD2++wxgRoRXklBjO1rj3mPoihKbMbVuo11h3ammmS3gXGjH6aq2j6UYyoQJKQxJzca7T//PmbOqrE6afSzWjwYRDrH0rfJehCQeGL3A2g/Fwwgnzf2J28E8RwlKdRIA0eDEsL3StcSpvKJF7yKK30lGBZIm6kFOmg2XnnTglRBARVhORLax82xv8BqlSWd6fV88kjRppOIXqZ7YJ0i2D+M95huTeQZGKOiyabckfZ5vxHZGZ5cFtgOwomW5kvCR73MjC8IVRlb0/VLaUejTCVIHzDZaO18+/10GA5ckv000dFd82NAJ879FeFDOHmBDdSLkfDLEQO9aW+btZ6vH8CnSLpxtMwUV1zktp7g30MH3aOIkqp5tzkr55VpXZrBHeNdWT8udbMYYiNC6vzIT61fHWIt4g6vDDtevDCeJTH6cFwYu+VS7zAhzYrgv2ixUeTXd5q2IXWmRqQHVw2n3txlGBe0kAKzgOzz03bkRl6BAcUbUKbvrn8EOYsn0h/C3SpDjyokA9RpD/8D07Z+xpcit88ucxxLTUvEKbhkAhdlHhft9n8WRa7vZvwR0ltpgqLX1xhDUK3F6rZ/oEiQCO1Nt1Mfa0NugRKtDQz5jD26IEda0GriZDUly/Sggr1oBlI7YcgoxdN46tvRT41Mg46ZQmjz1pbo+m+Ebjw=
+  app: tinkoff-web-wrapper
+  on: heroku-github
 
 cache: pip
+
 before_install:
-  - export PYTHONPATH=$PYTHONPATH:$(pwd)
+- export PYTHONPATH=$PYTHONPATH:$(pwd)
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - python manage.py test
-  - python helloworld/task_queue.py start
+- python manage.py test
+- python helloworld/task_queue.py start
