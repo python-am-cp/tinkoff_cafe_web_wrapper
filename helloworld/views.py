@@ -36,6 +36,7 @@ def receive_form(request):
         curr_research = handle_user_data(user_data)
         handle_user_files(request.FILES, curr_research)
         taskQueue.put(curr_research)
+
         return HttpResponse("Ваши файлы сохранены")
     return HttpResponse("Метод должен быть POST")
 
