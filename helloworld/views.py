@@ -27,7 +27,9 @@ taskQueue = queue.Queue(maxsize=6)
 @csrf_exempt
 def receive_form(request):
     global taskQueue
+    print("adbgsbfs")
     if request.method == 'POST':
+        print("12345443")
         if taskQueue.full():
             return HttpResponse("К сожалению очередь заполнена, отправьте позже")
         user_data = request.POST.copy()
