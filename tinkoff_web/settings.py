@@ -135,9 +135,9 @@ INPUT_DIR = os.path.join(BASE_DIR, "helloworld/input_user/")
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/staticfiles/'
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'staticfiles'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'staticfiles'),
+# )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = "/media/"
