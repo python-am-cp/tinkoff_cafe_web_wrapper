@@ -11,6 +11,7 @@ from helloworld import cross_validation
 class TaskDaemon(Daemon):
     def run(self):
         while True:
+            print("Демон жив")
             if not taskQueue.empty():
                 current = taskQueue.get()
                 calculate_send_clear(current)
