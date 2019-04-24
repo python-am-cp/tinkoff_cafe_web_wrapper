@@ -3,8 +3,8 @@ import time
 import shutil
 from django.core.mail import EmailMessage
 
-from .views import taskQueue
-from .daemon import Daemon
+from helloworld.views import taskQueue
+from helloworld.daemon import Daemon
 from. import cross_validation
 
 
