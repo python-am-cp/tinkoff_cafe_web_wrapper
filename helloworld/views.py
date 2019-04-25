@@ -11,7 +11,7 @@ import queue
 import threading
 from tinkoff_web import settings
 from rq import Queue
-from worker import conn
+from helloworld.worker import conn
 from helloworld.task import calculate_send_clear
 
 
