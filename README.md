@@ -51,9 +51,9 @@ Tinkoff Cafe Web Wrapper
    
    Используемые технологии в данной ветке:
    ========================
-   Фронтенд - HTML, CSS
-   Backend - Python Django
-   Инструменты - pycharm, vs code, ngrok, github, windows
+   + Фронтенд - HTML, CSS
+   + Backend - Python Django
+   + Инструменты - pycharm, vs code, ngrok, github, windows
 
 
 
