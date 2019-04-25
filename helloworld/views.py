@@ -2,16 +2,12 @@ from django.shortcuts import render
 import os
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-import time
-import shutil
 import random
 from helloworld.classes import Research
-from django.core.mail import EmailMessage
 import queue
-import threading
 from tinkoff_web import settings
 from rq import Queue
-from helloworld.worker import conn
+from worker import conn
 from helloworld.task import calculate_send_clear
 
 
