@@ -49,18 +49,11 @@ Tinkoff Cafe Web Wrapper
    + Основная логика взаимодействия пользовательских файлов, вычисления, получение результата (см Схема)
    
    
-   Используемые технологии:
+   Используемые технологии в данной ветке:
    ========================
-   ![alt text](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper/blob/develop/im/tech.png)
-
-   
-   Другие полезные ссылки:
-   =======================
-
-+ [Cтек технологий](https://docs.google.com/spreadsheets/d/10_ih1ONghtAGQ29BRwEeNhrGonIFp6qVrk0CyaJH7SM/edit?usp=sharing)
-
-+ [Список дел и материалов для изучения](https://trello.com/b/sYs31Fnj/tinkoff-web) 
-
+   + Фронтенд - HTML, CSS
+   + Backend - Python Django
+   + Инструменты - pycharm, vs code, ngrok, github, windows
 
 
 
