@@ -2,6 +2,8 @@ dist: xenial
 language: python
 python:
 - '3.6'
+services:
+- redis-server
 deploy:
   provider: heroku
   api_key:
@@ -15,6 +17,5 @@ install:
 - pip install -r requirements.txt
 script:
 - python manage.py test
-services:
-- redis-server
+
 #- python helloworld/task_queue.py start
