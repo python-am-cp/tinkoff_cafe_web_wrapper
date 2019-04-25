@@ -10,7 +10,12 @@ from django.core.mail import EmailMessage
 import queue
 import threading
 from tinkoff_web import settings
+from rq import Queue
+from worker import conn
+from helloworld.task import calculate_send_clear
 
+
+task_q = Queue(connection=conn)
 
 taskQueue = queue.Queue(maxsize=6)
 
@@ -35,8 +40,8 @@ def receive_form(request):
         user_data = request.POST.copy()
         curr_research = handle_user_data(user_data)
         handle_user_files(request.FILES, curr_research)
-        taskQueue.put(curr_research)
-
+        # taskQueue.put(curr_research)
+        result = task_q.enqueue(calculate_send_clear, curr_research)
         return HttpResponse("Ваши файлы сохранены")
     return HttpResponse("Метод должен быть POST")
 
