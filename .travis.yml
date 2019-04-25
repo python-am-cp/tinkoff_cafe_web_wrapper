@@ -15,4 +15,6 @@ install:
 - pip install -r requirements.txt
 script:
 - python manage.py test
+service:
+- redis-server
 #- python helloworld/task_queue.py start
