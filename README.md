@@ -6,10 +6,6 @@ Tinkoff Cafe Web Wrapper
 
 [Фронтенд](https://github.com/python-am-cp/tinkoff_cafe_web_wrapper-front)
 
-
-   Общая схема работы
-   ============
-   ![](im/общая-схема.png)
    
    Схема основной логики 
    ===============
