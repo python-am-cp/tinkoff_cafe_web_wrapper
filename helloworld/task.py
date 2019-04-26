@@ -47,10 +47,13 @@ def calculate_send_clear(curr_res):
     # print(response.headers)
     # msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
     # msg.send()
+    print(curr_res.email)
     send_mail(subj,
               mail_content,
               settings.DEFAULT_FROM_EMAIL,
               [curr_res.email],
-              fail_silently=False)
+              fail_silently=False,
+              auth_user=None,
+              auth_password="QWERTYYTREWQ")
     shutil.rmtree(curr_res.path, ignore_errors=True)
     print("so...")
