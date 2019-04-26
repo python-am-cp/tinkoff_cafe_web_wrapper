@@ -31,7 +31,7 @@ def calculate_send_clear(curr_res):
                    'расчетов по метрике составил: ' + '\n\n'
 
     print("hello")
-    sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+    sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
     from_email1 = Email("app131467002@heroku.com")
     subject1 = "Hello World from the SendGrid Python Library!"
     to_email1 = Email(curr_res.email)
