@@ -5,7 +5,6 @@ from helloworld import cross_validation
 
 
 def calculate_send_clear(curr_res):
-    print("ya tut")
     # cross_validation.validate(curr_res.path)
 
     # with open(curr_res.path + 'result.txt', 'w+') as dest:
@@ -28,6 +27,7 @@ def calculate_send_clear(curr_res):
     mail_content = 'Здравствуйте,' + ' ' + curr_res.name + ', ' + 'результат ' \
                    'расчетов по метрике составил: ' + '\n\n'
 
+    print(curr_res.email)
     msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
     msg.send()
     shutil.rmtree(curr_res.path, ignore_errors=True)
