@@ -37,9 +37,9 @@ def calculate_send_clear(curr_res):
 
     print(curr_res.email)
     send_result = send_mail(subj,
-                    mail_content,
-                    settings.EMAIL_HOST_USER,
-                    [curr_res.email],
-                    fail_silently=False)
+                            mail_content,
+                            settings.EMAIL_HOST_USER,
+                            [curr_res.email],
+                            fail_silently=False)
     shutil.rmtree(curr_res.path, ignore_errors=True)
     print(send_result)
