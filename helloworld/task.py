@@ -12,6 +12,7 @@ from sendgrid.helpers.mail import *
 from helloworld import cross_validation
 
 
+
 def calculate_send_clear(curr_res):
     # cross_validation.validate(curr_res.path)
 
