@@ -31,8 +31,8 @@ def receive_form(request):
     print("adbgsbfs")
     if request.method == 'POST':
         print("12345443")
-        if taskQueue.full():
-            return HttpResponse("К сожалению очередь заполнена, отправьте позже")
+        # if taskQueue.full():
+        #     return HttpResponse("К сожалению очередь заполнена, отправьте позже")
         user_data = request.POST.copy()
         curr_research = handle_user_data(user_data)
         handle_user_files(request.FILES, curr_research)
