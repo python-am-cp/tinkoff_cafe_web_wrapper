@@ -28,7 +28,7 @@ def calculate_send_clear(curr_res):
     mail_content = 'Здравствуйте,' + ' ' + curr_res.name + ', ' + 'результат ' \
                    'расчетов по метрике составил: ' + '\n\n'
 
-    print(curr_res.email)
+    print("hello")
     # msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
     # msg.send()
     send_mail(subj,
