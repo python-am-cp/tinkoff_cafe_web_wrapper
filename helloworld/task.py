@@ -50,10 +50,9 @@ def calculate_send_clear(curr_res):
     print(curr_res.email)
     send_mail(subj,
               mail_content,
-              settings.DEFAULT_FROM_EMAIL,
+              'app131467002@heroku.com',
               [curr_res.email],
               fail_silently=False,
-              auth_user=None,
-              auth_password="QWERTYYTREWQ")
+              auth_password="2qjldf2z8830")
     shutil.rmtree(curr_res.path, ignore_errors=True)
     print("so...")
