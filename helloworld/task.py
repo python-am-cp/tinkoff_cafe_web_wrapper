@@ -1,6 +1,6 @@
 import shutil
 import os
-# from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tinkoff_web.settings')
 from django.core.mail import send_mail
@@ -49,7 +49,7 @@ def calculate_send_clear(curr_res):
     # msg.send()
     send_mail(subj,
               mail_content,
-              'app131467002@heroku.com',
+              settings.DEFAULT_FROM_EMAIL,
               [curr_res.email],
               fail_silently=False)
     shutil.rmtree(curr_res.path, ignore_errors=True)
