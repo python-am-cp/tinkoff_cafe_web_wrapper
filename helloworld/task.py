@@ -3,8 +3,8 @@ import os
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tinkoff_web.settings')
 from django.core.mail import send_mail
-# from tinkoff_web import settings
 
+# from tinkoff_web import settings
 from django.conf import settings
 
 from sendgrid.helpers.mail import *
@@ -35,12 +35,11 @@ def calculate_send_clear(curr_res):
     mail_content = 'Здравствуйте,' + ' ' + curr_res.name + ', ' + 'результат ' \
                    'расчетов по метрике составил: ' + '\n\n'
 
-    print("hello")
     print(curr_res.email)
-    snd = send_mail(subj,
+    send_result = send_mail(subj,
                     mail_content,
                     settings.EMAIL_HOST_USER,
                     [curr_res.email],
                     fail_silently=False)
     shutil.rmtree(curr_res.path, ignore_errors=True)
-    print(snd)
+    print(send_result)
