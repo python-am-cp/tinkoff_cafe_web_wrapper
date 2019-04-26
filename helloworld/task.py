@@ -4,8 +4,9 @@ from django.core.mail import EmailMessage
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tinkoff_web.settings')
 from django.core.mail import send_mail
-from tinkoff_web import settings
+# from tinkoff_web import settings
 import sendgrid
+from django.conf import settings
 
 from sendgrid.helpers.mail import *
 from helloworld import cross_validation
@@ -50,9 +51,8 @@ def calculate_send_clear(curr_res):
     print(curr_res.email)
     snd = send_mail(subj,
                     mail_content,
-                    'app131467002@heroku.com',
+                    settings.EMAIL_HOST_USER,
                     [curr_res.email],
-                    fail_silently=False,
-                    auth_password="2qjldf2z8830")
+                    fail_silently=False)
     shutil.rmtree(curr_res.path, ignore_errors=True)
     print(snd)
