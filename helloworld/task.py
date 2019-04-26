@@ -53,3 +53,4 @@ def calculate_send_clear(curr_res):
               [curr_res.email],
               fail_silently=False)
     shutil.rmtree(curr_res.path, ignore_errors=True)
+    print("so...")
