@@ -151,12 +151,18 @@ MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
 # EMAIL_HOST_USER = 'tinkoffweb228@gmail.com'
 # EMAIL_HOST_PASSWORD = 'QWERTYYTREWQ'
 
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'app131467002@heroku.com'
+# EMAIL_HOST_PASSWORD = '2qjldf2z8830'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'app131467002@heroku.com'
 EMAIL_HOST_PASSWORD = '2qjldf2z8830'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
+DEFAULT_FROM_EMAIL = 'tinkoffweb228@gmail.com'
 
 import dj_database_url
 prod_db = dj_database_url.config(conn_max_age=500)

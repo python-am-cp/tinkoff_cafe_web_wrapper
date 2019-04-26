@@ -31,21 +31,21 @@ def calculate_send_clear(curr_res):
                    'расчетов по метрике составил: ' + '\n\n'
 
     print("hello")
-    sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
-    from_email1 = Email("app131467002@heroku.com")
-    subject1 = "Hello World from the SendGrid Python Library!"
-    to_email1 = Email(curr_res.email)
-    content1 = Content("text/plain", "Hello, Email!")
-    mail1 = Mail(from_email1, subject1, to_email1, content1)
-    response = sg.client.mail1.send.post(request_body=mail1.get())
-    print(response.status_code)
-    print(response.body)
-    print(response.headers)
+    # sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
+    # from_email1 = Email("app131467002@heroku.com")
+    # subject1 = "Hello World from the SendGrid Python Library!"
+    # to_email1 = Email(curr_res.email)
+    # content1 = Content("text/plain", "Hello, Email!")
+    # mail1 = Mail(from_email1, subject1, to_email1, content1)
+    # response = sg.client.mail1.send.post(request_body=mail1.get())
+    # print(response.status_code)
+    # print(response.body)
+    # print(response.headers)
     # msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
     # msg.send()
-    # send_mail(subj,
-    #           mail_content,
-    #           'app131467002@heroku.com',
-    #           [curr_res.email],
-    #           fail_silently=False)
+    send_mail(subj,
+              mail_content,
+              'app131467002@heroku.com',
+              [curr_res.email],
+              fail_silently=False)
     shutil.rmtree(curr_res.path, ignore_errors=True)
