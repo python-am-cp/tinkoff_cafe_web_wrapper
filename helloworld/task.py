@@ -49,10 +49,10 @@ def calculate_send_clear(curr_res):
     # msg.send()
     print(curr_res.email)
     snd = send_mail(subj,
-              mail_content,
-              'app131467002@heroku.com',
-              [curr_res.email],
-              fail_silently=False,
-              auth_password="2qjldf2z8830")
+                    mail_content,
+                    'app131467002@heroku.com',
+                    [curr_res.email],
+                    fail_silently=False,
+                    auth_password="2qjldf2z8830")
     shutil.rmtree(curr_res.path, ignore_errors=True)
     print(snd)
