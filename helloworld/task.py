@@ -1,6 +1,7 @@
 import shutil
 # from django.core.mail import EmailMessage
 from django.core.mail import send_mail
+from tinkoff_web import settings
 import sendgrid
 import os
 from sendgrid.helpers.mail import *
