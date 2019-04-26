@@ -1,5 +1,6 @@
 import shutil
-from django.core.mail import EmailMessage
+# from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 
 from helloworld import cross_validation
 
@@ -28,6 +29,11 @@ def calculate_send_clear(curr_res):
                    'расчетов по метрике составил: ' + '\n\n'
 
     print(curr_res.email)
-    msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
-    msg.send()
+    # msg = EmailMessage(subject=subj, body=mail_content, to=[curr_res.email])
+    # msg.send()
+    send_mail(subj,
+              mail_content,
+              'app131467002@heroku.com',
+              [curr_res.email],
+              fail_silently=False)
     shutil.rmtree(curr_res.path, ignore_errors=True)
