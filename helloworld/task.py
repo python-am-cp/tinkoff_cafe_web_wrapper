@@ -1,9 +1,12 @@
 import shutil
+import os
 # from django.core.mail import EmailMessage
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tinkoff_web.settings')
 from django.core.mail import send_mail
 from tinkoff_web import settings
 import sendgrid
-import os
+
 from sendgrid.helpers.mail import *
 from helloworld import cross_validation
 
