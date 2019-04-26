@@ -25,7 +25,7 @@ SECRET_KEY = '0u0y)u3&1__6oiu695pj0d@^e*f-m&73h4s*%79hs)g$6vk*3b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18dd36e1.ngrok.io', '127.0.0.1']
+ALLOWED_HOSTS = ['tinkoff-web-wrapper.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -45,6 +45,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,16 +125,33 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
 _PATH = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.join(os.path.abspath("manage.py")[:-9])
+# INPUT_DIR = os.path.join(PROJECT_ROOT, "helloworld/input_user/")
+INPUT_DIR = 'tmp/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/staticfiles/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+
+# EMAIL_HOST_USER = 'tinkoffweb228@gmail.com'
+# EMAIL_HOST_PASSWORD = 'QWERTYYTREWQ'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'app131467002@heroku.com'
+EMAIL_HOST_PASSWORD = '2qjldf2z8830'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'tinkoffweb228@gmail.com'
-EMAIL_HOST_PASSWORD = 'QWERTYYTREWQ'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'tinkoffweb228@gmail.com'
+
+import dj_database_url
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
